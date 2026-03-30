@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PillArrowLink } from "@/components/layout/PillArrowLink";
+import { Reveal } from "@/components/motion/Reveal";
 
 export function WorkShowcaseSection() {
   return (
@@ -8,7 +9,7 @@ export function WorkShowcaseSection() {
       className="bg-background py-14 md:py-32"
     >
       <div className="container space-y-4">
-        <div className="flex items-center justify-between gap-4">
+        <Reveal className="flex items-center justify-between gap-4">
           <h2
             id="work-showcase-title"
             className="text-5xl uppercase tracking-tight text-foreground md:text-7xl"
@@ -16,8 +17,9 @@ export function WorkShowcaseSection() {
             Work
           </h2>
           <PillArrowLink href="/works">All work</PillArrowLink>
-        </div>
+        </Reveal>
 
+        <Reveal>
         <article className="group overflow-hidden bg-foreground">
           <div className="relative min-h-[280px] bg-foreground md:min-h-[720px] cursor-pointer">
             <Image
@@ -40,7 +42,9 @@ export function WorkShowcaseSection() {
             </div>
           </div>
         </article>
+        </Reveal>
 
+        <Reveal delay={0.08}>
         <div className="flex flex-col gap-2 text-zinc-500 md:flex-row md:items-start md:justify-between">
           <p className="text-2xl font-medium text-foreground">
             Sky Alliance Inc.
@@ -50,9 +54,10 @@ export function WorkShowcaseSection() {
             website to match the brand and convert visitors.
           </p>
         </div>
+        </Reveal>
 
         <div className="mt-20 grid grid-cols-1 items-start gap-12 md:mt-28 md:grid-cols-12 md:gap-16 lg:gap-24">
-          <div className="space-y-8 md:col-span-4">
+          <Reveal className="space-y-8 md:col-span-4">
             <div className="flex items-center gap-3">
               <span
                 aria-hidden
@@ -96,9 +101,9 @@ export function WorkShowcaseSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="md:col-span-8">
+          <Reveal className="md:col-span-8" delay={0.1}>
             <article className="group overflow-hidden bg-foreground">
               <div className="relative min-h-[240px] cursor-pointer md:min-h-[420px] lg:min-h-[520px]">
                 <Image
@@ -127,10 +132,11 @@ export function WorkShowcaseSection() {
               </p>
               <p className="text-sm md:text-base">Branding Agency</p>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-10 md:mt-24 md:grid-cols-2 md:gap-8 lg:gap-10">
+          <Reveal>
           <article className="group">
             <div className="relative aspect-4/3 overflow-hidden bg-zinc-200 md:aspect-16/11">
               <Image
@@ -162,7 +168,9 @@ export function WorkShowcaseSection() {
               </p>
             </div>
           </article>
+          </Reveal>
 
+          <Reveal delay={0.1}>
           <article className="group">
             <div className="relative aspect-4/3 overflow-hidden bg-zinc-200 md:aspect-16/11">
               <Image
@@ -187,13 +195,14 @@ export function WorkShowcaseSection() {
             </div>
             <div className="mt-4 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
               <p className="text-xl font-semibold text-foreground md:text-2xl">
-                Theng's Portfolio
+                {"Theng's Portfolio"}
               </p>
               <p className="text-sm text-zinc-500 md:text-base">
                 Personal website for photographer
               </p>
             </div>
           </article>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import SpinningBoxText from "./SpinningBoxText";
 
 const heroImages = {
@@ -10,7 +13,24 @@ const heroImages = {
     "https://images.unsplash.com/photo-1675252369719-dd52bc69c3df?auto=format&fit=crop&w=1100&q=80",
 };
 
+const revealEase = [0.22, 1, 0.36, 1] as const;
+
 export function Hero() {
+  const prefersReducedMotion = useReducedMotion();
+
+  const reveal = (delay: number) =>
+    ({
+      initial: prefersReducedMotion
+        ? { opacity: 1, y: 0 }
+        : { opacity: 0, y: 48 },
+      animate: { opacity: 1, y: 0 },
+      transition: {
+        duration: prefersReducedMotion ? 0 : 0.65,
+        ease: revealEase,
+        delay: prefersReducedMotion ? 0 : delay,
+      },
+    }) as const;
+
   return (
     <section className="relative isolate min-h-screen overflow-x-clip overflow-y-visible bg-background py-16 md:py-20">
       <svg
@@ -37,9 +57,10 @@ export function Hero() {
           fill="currentColor"
         />
       </svg>
-      <div
+      <motion.div
         aria-hidden
         className="absolute left-2 top-1/2 z-10 hidden h-[330px] w-[230px] -translate-y-1/2 overflow-hidden md:block lg:left-52 lg:h-[420px] lg:w-[280px]"
+        {...reveal(0)}
       >
         <video
           src="/placeholder-video1.mp4"
@@ -49,10 +70,11 @@ export function Hero() {
           loop
           playsInline
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
         aria-hidden
         className="absolute right-4 top-20 z-10 h-[240px] w-[170px] overflow-hidden sm:h-[300px] sm:w-[210px] md:right-10 md:h-[360px] md:w-[250px] lg:right-84 lg:h-[420px] lg:w-[300px]"
+        {...reveal(0.1)}
       >
         <Image
           src={heroImages.topRight}
@@ -62,10 +84,11 @@ export function Hero() {
           className="object-cover"
           priority
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
         aria-hidden
         className="absolute bottom-8 right-4 z-10 h-[190px] w-[290px] overflow-hidden sm:h-[230px] sm:w-[350px] md:bottom-12 md:right-10 md:h-[280px] md:w-[430px] lg:bottom-72 lg:right-144 lg:h-[320px] lg:w-[500px]"
+        {...reveal(0.2)}
       >
         <video
           src="/placeholder-video2.mp4"
@@ -75,7 +98,7 @@ export function Hero() {
           loop
           playsInline
         />
-      </div>
+      </motion.div>
       <div className="container relative min-h-screen">
         <div className="relative z-20 mx-auto flex min-h-[70vh] max-w-4xl items-center justify-center">
           <div className="text-center">

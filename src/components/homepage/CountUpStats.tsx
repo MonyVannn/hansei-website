@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { animate, useInView } from "framer-motion";
+import { Reveal } from "@/components/motion/Reveal";
 
 export function CountUpStats() {
   return (
@@ -10,15 +11,18 @@ export function CountUpStats() {
       className="bg-background py-14 md:py-32"
     >
       <div className="container mx-auto max-w-3xl">
-        <h2
-          id="count-up-stats-title"
-          className="mb-8 text-center text-2xl leading-snug tracking-tight text-foreground md:mb-16 md:text-3xl"
-        >
-          Turn attention into growth with social momentum, sharper identity, and
-          sites built to convert.
-        </h2>
+        <Reveal>
+          <h2
+            id="count-up-stats-title"
+            className="mb-8 text-center text-2xl leading-snug tracking-tight text-foreground md:mb-16 md:text-3xl"
+          >
+            Turn attention into growth with social momentum, sharper identity,
+            and sites built to convert.
+          </h2>
+        </Reveal>
 
-        <div className="flex flex-col items-center justify-center sm:flex-row">
+        <Reveal delay={0.1}>
+          <div className="flex flex-col items-center justify-center sm:flex-row">
           <Stat
             num={45}
             suffix="%"
@@ -38,6 +42,7 @@ export function CountUpStats() {
             subheading="Total brand impressions in orbit."
           />
         </div>
+        </Reveal>
       </div>
     </section>
   );
