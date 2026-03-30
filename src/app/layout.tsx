@@ -46,7 +46,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${heroSans.variable} ${heroSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body suppressHydrationWarning className="min-h-full flex flex-col">
         <SiteHeader />
         <main className="flex-1">{children}</main>
       </body>

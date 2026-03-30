@@ -12,7 +12,7 @@ const heroImages = {
 
 export function Hero() {
   return (
-    <section className="relative isolate min-h-screen overflow-hidden bg-background py-16 md:py-20">
+    <section className="relative isolate min-h-screen overflow-x-clip overflow-y-visible bg-background py-16 md:py-20">
       <svg
         aria-hidden
         className="pointer-events-none absolute -right-44 -top-36 h-[640px] w-[640px] text-lime-300 blur-[140px] -z-2"
