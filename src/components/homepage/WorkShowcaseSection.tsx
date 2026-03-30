@@ -7,7 +7,7 @@ export function WorkShowcaseSection() {
       aria-labelledby="work-showcase-title"
       className="bg-background py-14 md:py-20"
     >
-      <div className="container space-y-6 md:space-y-8">
+      <div className="container space-y-4">
         <div className="flex items-center justify-between gap-4">
           <h2
             id="work-showcase-title"
@@ -42,7 +42,7 @@ export function WorkShowcaseSection() {
         </article>
 
         <div className="flex flex-col gap-2 text-zinc-500 md:flex-row md:items-start md:justify-between">
-          <p className="text-xl font-medium text-foreground">
+          <p className="text-2xl font-medium text-foreground">
             Sky Alliance Inc.
           </p>
           <p className="max-w-xl text-sm leading-relaxed md:text-right md:text-base">
