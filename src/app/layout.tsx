@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Montserrat,
+  Playfair_Display,
+} from "next/font/google";
 import "./globals.css";
+import { SiteHeader } from "@/components/layout/SiteHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +16,19 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const heroSans = Montserrat({
+  variable: "--font-hero-sans",
+  subsets: ["latin"],
+  weight: ["700", "800"],
+});
+
+const heroSerif = Playfair_Display({
+  variable: "--font-hero-serif",
+  subsets: ["latin"],
+  style: ["italic"],
+  weight: ["500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -25,9 +44,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${heroSans.variable} ${heroSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+      </body>
     </html>
   );
 }
