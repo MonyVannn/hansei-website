@@ -35,7 +35,7 @@ export function Hero() {
     <section className="relative isolate min-h-screen overflow-x-clip overflow-y-visible bg-background py-16 md:py-20">
       <svg
         aria-hidden
-        className="pointer-events-none absolute -right-44 -top-36 h-[640px] w-[640px] text-lime-300 blur-[140px] -z-2"
+        className="pointer-events-none absolute -right-40 -top-32 h-[520px] w-[520px] text-lime-300 blur-[120px] -z-2 xl:h-[640px] xl:w-[640px] xl:blur-[140px]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 871.151 772.328"
       >
@@ -47,7 +47,7 @@ export function Hero() {
       </svg>
       <svg
         aria-hidden
-        className="pointer-events-none absolute -left-32 bottom-2 h-[460px] w-[460px] text-lime-300 blur-[100px] -z-2"
+        className="pointer-events-none absolute -left-28 bottom-2 h-[360px] w-[360px] text-lime-300 blur-[90px] -z-2 xl:h-[460px] xl:w-[460px] xl:blur-[100px]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 871.151 772.328"
       >
@@ -59,7 +59,7 @@ export function Hero() {
       </svg>
       <motion.div
         aria-hidden
-        className="absolute left-2 top-1/2 z-10 hidden h-[330px] w-[230px] -translate-y-1/2 overflow-hidden md:block lg:left-52 lg:h-[420px] lg:w-[280px]"
+        className="absolute left-2 top-1/2 z-10 hidden h-[280px] w-[190px] -translate-y-1/2 overflow-hidden md:block lg:left-14 lg:h-[330px] lg:w-[220px] xl:left-28 xl:h-[380px] xl:w-[255px] 2xl:left-52 2xl:h-[420px] 2xl:w-[280px]"
         {...reveal(0)}
       >
         <video
@@ -73,21 +73,21 @@ export function Hero() {
       </motion.div>
       <motion.div
         aria-hidden
-        className="absolute right-4 top-20 z-10 h-[240px] w-[170px] overflow-hidden sm:h-[300px] sm:w-[210px] md:right-10 md:h-[360px] md:w-[250px] lg:right-84 lg:h-[420px] lg:w-[300px]"
+        className="absolute right-3 top-14 z-10 h-[200px] w-[140px] overflow-hidden sm:h-[240px] sm:w-[170px] md:right-8 md:top-16 md:h-[280px] md:w-[200px] lg:right-16 lg:h-[320px] lg:w-[230px] xl:right-28 xl:h-[360px] xl:w-[250px] 2xl:right-40 2xl:h-[420px] 2xl:w-[300px]"
         {...reveal(0.1)}
       >
         <Image
           src={heroImages.topRight}
           alt=""
           fill
-          sizes="(max-width: 640px) 170px, (max-width: 1024px) 250px, 300px"
+          sizes="(max-width: 640px) 140px, (max-width: 768px) 170px, (max-width: 1280px) 230px, (max-width: 1536px) 250px, 300px"
           className="object-cover"
           priority
         />
       </motion.div>
       <motion.div
         aria-hidden
-        className="absolute bottom-8 right-4 z-10 h-[190px] w-[290px] overflow-hidden sm:h-[230px] sm:w-[350px] md:bottom-12 md:right-10 md:h-[280px] md:w-[430px] lg:bottom-72 lg:right-144 lg:h-[320px] lg:w-[500px]"
+        className="absolute bottom-8 right-4 z-10 h-[160px] w-[240px] overflow-hidden sm:h-[190px] sm:w-[290px] md:bottom-10 md:right-8 md:h-[220px] md:w-[340px] lg:bottom-16 lg:right-16 lg:h-[250px] lg:w-[390px] xl:bottom-24 xl:right-40 xl:h-[280px] xl:w-[430px] 2xl:bottom-36 2xl:right-72 2xl:h-[320px] 2xl:w-[500px]"
         {...reveal(0.2)}
       >
         <video
@@ -101,10 +101,10 @@ export function Hero() {
       </motion.div>
       <div className="container relative min-h-screen">
         <div className="relative z-20 mx-auto flex min-h-[70vh] max-w-4xl items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-[3.2rem] uppercase leading-[0.88] tracking-tight text-foreground sm:text-[4.2rem] md:text-[5.7rem] lg:text-[10rem]">
+          <div className="relative z-30 text-center">
+            <h1 className="text-[clamp(3rem,7.2vw,6.5rem)] uppercase leading-[0.9] tracking-tight text-foreground">
               For The
-              <div className="mt-6">
+              <div className="mt-4 md:mt-5">
                 <SpinningBoxText />
               </div>
             </h1>

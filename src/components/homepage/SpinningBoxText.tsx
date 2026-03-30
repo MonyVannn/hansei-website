@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const SpinningBoxText = () => {
   return (
-    <span className="flex flex-col items-center justify-center gap-6 text-[8rem] text-background md:flex-row md:gap-4">
+    <span className="flex flex-col items-center justify-center gap-4 text-[clamp(2.4rem,6.2vw,4.75rem)] text-background md:flex-row md:gap-3">
       <Box front="Impact" bottom="Growth" back="Future" top="Business" />
     </span>
   );
@@ -18,13 +18,13 @@ interface BoxProps {
 }
 
 const Box = ({ front, bottom, back, top }: BoxProps) => {
-  const boxHeightRem = 9; // h-40 => 10rem
+  const boxHeightRem = 7; // h-28 => 7rem
   const halfDepthPx = (boxHeightRem * 16) / 2;
   const faceOffset = `${boxHeightRem}rem`;
 
   return (
     <motion.span
-      className="relative h-36 w-164 font-semibold uppercase"
+      className="relative h-28 w-[min(84vw,22rem)] font-semibold uppercase sm:w-[min(80vw,26rem)] md:w-[min(66vw,30rem)] xl:w-[min(56vw,34rem)]"
       style={{
         transformStyle: "preserve-3d",
         transformOrigin: `center center -${halfDepthPx}px`,
