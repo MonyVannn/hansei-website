@@ -5,9 +5,9 @@ const heroImages = {
   topRight:
     "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
   middleLeft:
-    "https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?auto=format&fit=crop&w=900&q=80",
+    "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=900&q=80",
   bottomRight:
-    "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1100&q=80",
+    "https://images.unsplash.com/photo-1675252369719-dd52bc69c3df?auto=format&fit=crop&w=1100&q=80",
 };
 
 export function Hero() {
@@ -41,13 +41,13 @@ export function Hero() {
         aria-hidden
         className="absolute left-2 top-1/2 z-10 hidden h-[330px] w-[230px] -translate-y-1/2 overflow-hidden md:block lg:left-52 lg:h-[420px] lg:w-[280px]"
       >
-        <Image
-          src={heroImages.middleLeft}
-          alt=""
-          fill
-          sizes="(max-width: 1024px) 230px, 280px"
-          className="object-cover"
-          priority
+        <video
+          src="/placeholder-video1.mp4"
+          className="h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
       </div>
       <div
@@ -67,12 +67,13 @@ export function Hero() {
         aria-hidden
         className="absolute bottom-8 right-4 z-10 h-[190px] w-[290px] overflow-hidden sm:h-[230px] sm:w-[350px] md:bottom-12 md:right-10 md:h-[280px] md:w-[430px] lg:bottom-72 lg:right-144 lg:h-[320px] lg:w-[500px]"
       >
-        <Image
-          src={heroImages.bottomRight}
-          alt=""
-          fill
-          sizes="(max-width: 640px) 290px, (max-width: 1024px) 430px, 500px"
-          className="object-cover"
+        <video
+          src="/placeholder-video2.mp4"
+          className="h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
       </div>
       <div className="container relative min-h-screen">

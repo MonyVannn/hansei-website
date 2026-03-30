@@ -18,13 +18,13 @@ interface BoxProps {
 }
 
 const Box = ({ front, bottom, back, top }: BoxProps) => {
-  const boxHeightRem = 10; // h-40 => 10rem
+  const boxHeightRem = 9; // h-40 => 10rem
   const halfDepthPx = (boxHeightRem * 16) / 2;
   const faceOffset = `${boxHeightRem}rem`;
 
   return (
     <motion.span
-      className="relative h-40 w-164 font-semibold uppercase"
+      className="relative h-36 w-164 font-semibold uppercase"
       style={{
         transformStyle: "preserve-3d",
         transformOrigin: `center center -${halfDepthPx}px`,
