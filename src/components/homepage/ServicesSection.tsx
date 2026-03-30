@@ -5,7 +5,7 @@ export function ServicesSection() {
   return (
     <section
       aria-labelledby="services-title"
-      className="bg-background py-14 md:py-20"
+      className="bg-background py-14 md:py-32"
     >
       <div className="container">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-20">

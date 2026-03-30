@@ -18,7 +18,7 @@ const tickerText = tickerItems.join(" \u2014 ");
 export function SiteHeader() {
   return (
     <>
-      <header className="shrink-0">
+      <header className="shrink-0 z-10">
         <div className="relative overflow-hidden bg-black py-1">
           <div className="ticker-track flex min-w-max items-center gap-4 whitespace-nowrap px-4 pl-36 text-[0.52rem] font-medium uppercase tracking-[0.09em] text-white/90 md:pl-48 md:text-[0.78rem]">
             <span aria-label="Ticker updates">{tickerText}</span>
